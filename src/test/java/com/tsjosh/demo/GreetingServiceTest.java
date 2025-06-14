@@ -28,13 +28,13 @@ public class GreetingServiceTest {
     }
 
     @Test
-    void shouldGreetWithDefaultNameWhenNameIsNoProvided(){
+    void shouldGreetWithDefaultNameWhenNameIsNotProvided(){
         given(properties.getDefaultName()).willReturn("World");
 
         String greeting = greetingService.sayHello(null);
 
         Assertions.assertEquals("Hello World", greeting);
-        assertThat(greeting).isEqualTo("hello world");
+        assertThat(greeting).isEqualTo("Hello World");
     }
 
     @Test
